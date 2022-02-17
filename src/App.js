@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom'
 import './App.css';
+import Scoreboard from './components/Scoreboard';
+import Admin from './components/Admin';
 
-function App() {
+                                                              /* // TO DO LIST
+
+  // Style 
+    // Grab some background images.
+    // some sports Icons i.e. football, goalpost, etc
+
+  // Add a temp Auth
+    //https://reactrouter.com/docs/en/v6/examples/auth
+  // REAL AUTHS
+    // Maybe FACEBOOK
+      // https://developers.facebook.com/docs/facebook-login/
+    //or Microsoft Azure
+      // https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization
+
+  // 
+
+                                                              // END TO DO LIST    */
+
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' element={<Scoreboard />} />
+        <Route path='admin' element={<Admin />} />
+      </Routes>
     </div>
   );
 }
-
-export default App;
